@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saphar - Premier Writing Services</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    .hero-bg {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    .animate-slide-up {
+      animation: slideUp 1s ease-out;
+    }
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+      transition: transform 0.3s ease;
+    }
+    .typewriter {
+      overflow: hidden;
+      white-space: nowrap;
+      animation: typing 3.5s steps(40, end);
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    /* Custom color palette */
+    .bg-pearl { background-color: #F7F7F5; }
+    .bg-ink { background-color: #0A1416; }
+    .bg-parchment { background-color: #ECECE8; }
+    .bg-indigo { background-color: #4F46E5; }
+    .hover\:bg-indigo-dark:hover { background-color: #4338CA; }
+    .text-charcoal { color: #111827; }
+    .text-gray { color: #6B7280; }
+    .text-white { color: #FFFFFF; }
+    .text-indigo { color: #4F46E5; }
+    .text-green { color: #10B981; }
+    .hover\:text-green-dark:hover { color: #059669; }
+    .border-charcoal { border-color: #111827; }
+    input::placeholder, textarea::placeholder { color: #6B7280; opacity: 0.7; }
+  </style>
+</head>
+<body class="scroll-smooth">
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-ink shadow-md z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <h1 class="text-2xl font-bold text-white" style="font-family: 'Playfair Display', serif;">Saphar</h1>
+        </div>
+        <div class="flex items-center space-x-4">
+          <a href="#home" class="text-green hover:text-green-dark">Home</a>
+          <a href="#services" class="text-green hover:text-green-dark">Services</a>
+          <a href="#portfolio" class="text-green hover:text-green-dark">Portfolio</a>
+          <a href="#about" class="text-green hover:text-green-dark">About</a>
+          <a href="#contact" class="text-green hover:text-green-dark">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero-bg h-screen flex items-center justify-center text-center text-white">
+    <div class="animate-slide-up">
+      <h1 class="typewriter text-4xl md:text-6xl font-bold mb-4" style="font-family: 'Playfair Display', serif;">
+        Crafting Words That Inspire
+      </h1>
+      <p class="text-lg md:text-xl mb-6 max-w-2xl mx-auto" style="font-family: 'Roboto', sans-serif;">
+        Saphar delivers exceptional writing services for every need, with over 100 successful projects and counting.
+      </p>
+      <a href="#contact" class="bg-indigo text-white px-6 py-3 rounded-full hover:bg-indigo-dark transition">Get a Quote</a>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-20 bg-pearl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-bold text-center mb-12 text-charcoal" style="font-family: 'Playfair Display', serif;">Our Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="service-card bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold mb-3 text-charcoal" style="font-family: 'Roboto', sans-serif;">Content Writing</h3>
+          <p class="text-gray">Engaging blog posts, articles, and web content tailored to your brand.</p>
+        </div>
+        <div class="service-card bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold mb-3 text-charcoal" style="font-family: 'Roboto', sans-serif;">Copywriting</h3>
+          <p class="text-gray">Persuasive ad copy, email campaigns, and product descriptions that convert.</p>
+        </div>
+        <div class="service-card bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold mb-3 text-charcoal" style="font-family: 'Roboto', sans-serif;">Technical Writing</h3>
+          <p class="text-gray">Clear, concise manuals, whitepapers, and documentation.</p>
+        </div>
+        <div class="service-card bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold mb-3 text-charcoal" style="font-family: 'Roboto', sans-serif;">Creative Writing</h3>
+          <p class="text-gray">Captivating stories, scripts, and creative content for any medium.</p>
+        </div>
+        <div class="service-card bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold mb-3 text-charcoal" style="font-family: 'Roboto', sans-serif;">Editing & Proofreading</h3>
+          <p class="text-gray">Polished, error-free content with meticulous attention to detail.</p>
+        </div>
+        <div class="service-card bg-white p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold mb-3 text-charcoal" style="font-family: 'Roboto', sans-serif;">Academic Writing</h3>
+          <p class="text-gray">High-quality essays, research papers, and dissertations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="py-20 bg-pearl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-bold text-center mb-12 text-charcoal" style="font-family: 'Playfair Display', serif;">Our Work</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-2 text-charcoal" style="font-family: 'Roboto', sans-serif;">Tech Startup Blog</h3>
+          <p class="text-gray mb-2">Series of SEO-optimized blog posts driving 50% more traffic.</p>
+          <span class="text-sm text-indigo">Content Writing</span>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-2 text-charcoal" style="font-family: 'Roboto', sans-serif;">E-commerce Campaign</h3>
+          <p class="text-gray mb-2">Email copy that boosted conversions by 30%.</p>
+          <span class="text-sm text-indigo">Copywriting</span>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-2 text-charcoal" style="font-family: 'Roboto', sans-serif;">Software Manual</h3>
+          <p class="text-gray mb-2">Comprehensive user guide for a SaaS platform.</p>
+          <span class="text-sm text-indigo">Technical Writing</span>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold mb-2 text-charcoal" style="font-family: 'Roboto', sans-serif;">Short Film Script</h3>
+          <p class="text-gray mb-2">Award-nominated script for a local film festival.</p>
+          <span class="text-sm text-indigo">Creative Writing</span>
+        </div>
+      </div>
+      <div class="text-center mt-12">
+        <a href="portfolio.html" class="text-green font-semibold hover:text-green-dark">View More Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20 bg-pearl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-bold text-center mb-12 text-charcoal" style="font-family: 'Playfair Display', serif;">About Saphar</h2>
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-6 md:mb-0">
+          <img src="https://images.unsplash.com/photo-1516321310768-61ca9eab3b38?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team working" class="rounded-lg shadow-md">
+        </div>
+        <div class="md:w-1/2 md:pl-8">
+          <p class="text-gray mb-4" style="font-family: 'Roboto', sans-serif;">
+            Founded with a passion for words, Saphar is a premier writing company delivering top-tier services across industries. With over 100 successful projects, our experienced team crafts compelling content that resonates with your audience.
+          </p>
+          <p class="text-gray" style="font-family: 'Roboto', sans-serif;">
+            From creative storytelling to technical precision, we handle every project with creativity, professionalism, and a commitment to excellence.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 bg-pearl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-bold text-center mb-12 text-charcoal" style="font-family: 'Playfair Display', serif;">Get in Touch</h2>
+      <div class="flex flex-col md:flex-row gap-8">
+        <div class="md:w-1/2">
+          <p class="text-gray mb-4" style="font-family: 'Roboto', sans-serif;">
+            Ready to elevate your content? Contact us today for a free consultation or quote.
+          </p>
+          <p class="text-gray" style="font-family: 'Roboto', sans-serif;">
+            Email: contact@saphar.com<br>
+            Phone: (123) 456-7890<br>
+            Address: 123, Success City
+          </p>
+        </div>
+        <div class="md:w-1/2">
+          <div class="bg-parchment p-6 rounded-lg">
+            <input type="text" id="name" placeholder="Your Name" class="w-full p-3 mb-4 border border-charcoal rounded bg-white text-gray">
+            <input type="email" id="email" placeholder="Your Email" class="w-full p-3 mb-4 border border-charcoal rounded bg-white text-gray">
+            <textarea id="message" placeholder="Your Message" class="w-full p-3 mb-4 border border-charcoal rounded bg-white text-gray" rows="4"></textarea>
+            <button id="submit-btn" class="bg-indigo text-white px-6 py-3 rounded-full hover:bg-indigo-dark transition">Send Message</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-ink text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-sm text-white" style="font-family: 'Roboto', sans-serif;">© 2025 Saphar. All rights reserved.</p>
+        <div class="flex space-x-4 mt-4 md:mt-0">
+          <a href="/privacy" class="text-green hover:text-green-dark">Privacy Policy</a>
+          <a href="/terms" class="text-green hover:text-green-dark">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scrolling for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Form submission handling (logs to console)
+    const submitBtn = document.getElementById('submit-btn');
+    submitBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      submitBtn.disabled = true; // Prevent multiple submissions
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      if (name && email && message) {
+        console.log('Form submitted:', { name, email, message });
+        alert('Message sent! We will get back to you soon.');
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('message').value = '';
+      } else {
+        alert('Please fill out all fields.');
+      }
+      submitBtn.disabled = false;
+    });
+  </script>
+</body>
+</html>
