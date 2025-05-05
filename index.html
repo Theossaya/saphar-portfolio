@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Saphar Writing Services Portfolio">
   <title>Saphar - Premier Writing Services</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -46,6 +47,13 @@
     .hover\:text-green-dark:hover { color: #059669; }
     .border-charcoal { border-color: #111827; }
     input::placeholder, textarea::placeholder { color: #6B7280; opacity: 0.7; }
+    /* Mobile menu styles */
+    .mobile-menu {
+      transition: transform 0.3s ease-in-out;
+    }
+    .mobile-menu.hidden {
+      transform: translateX(100%);
+    }
   </style>
 </head>
 <body class="scroll-smooth">
@@ -56,24 +64,43 @@
         <div class="flex items-center">
           <h1 class="text-2xl font-bold text-white" style="font-family: 'Playfair Display', serif;">Saphar</h1>
         </div>
-        <div class="flex items-center space-x-4">
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-4">
           <a href="#home" class="text-green hover:text-green-dark">Home</a>
           <a href="#services" class="text-green hover:text-green-dark">Services</a>
-          <a href="#portfolio" class="text-green hover:text-green-dark">Portfolio</a>
+          <a href="portfolio.html" class="text-green hover:text-green-dark">Portfolio</a>
           <a href="#about" class="text-green hover:text-green-dark">About</a>
           <a href="#contact" class="text-green hover:text-green-dark">Contact</a>
         </div>
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" class="text-white focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden mobile-menu hidden fixed top-16 right-0 w-3/4 bg-ink text-white shadow-lg">
+      <div class="flex flex-col space-y-4 p-4">
+        <a href="#home" class="text-green hover:text-green-dark">Home</a>
+        <a href="#services" class="text-green hover:text-green-dark">Services</a>
+        <a href="portfolio.html" class="text-green hover:text-green-dark">Portfolio</a>
+        <a href="#about" class="text-green hover:text-green-dark">About</a>
+        <a href="#contact" class="text-green hover:text-green-dark">Contact</a>
       </div>
     </div>
   </nav>
 
   <!-- Hero -->
   <section id="home" class="hero-bg h-screen flex items-center justify-center text-center text-white">
-    <div class="animate-slide-up">
-      <h1 class="typewriter text-4xl md:text-6xl font-bold mb-4" style="font-family: 'Playfair Display', serif;">
+    <div class="animate-slide-up px-4">
+      <h1 class="typewriter text-3xl sm:text-4xl md:text-6xl font-bold mb-4" style="font-family: 'Playfair Display', serif;">
         Crafting Words That Inspire
       </h1>
-      <p class="text-lg md:text-xl mb-6 max-w-2xl mx-auto" style="font-family: 'Roboto', sans-serif;">
+      <p class="text-base sm:text-lg md:text-xl mb-6 max-w-xl mx-auto" style="font-family: 'Roboto', sans-serif;">
         Saphar delivers exceptional writing services for every need, with over 100 successful projects and counting.
       </p>
       <a href="#contact" class="bg-indigo text-white px-6 py-3 rounded-full hover:bg-indigo-dark transition">Get a Quote</a>
@@ -81,83 +108,83 @@
   </section>
 
   <!-- Services -->
-  <section id="services" class="py-20 bg-pearl">
+  <section id="services" class="py-16 bg-pearl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl font-bold text-center mb-12 text-charcoal" style="font-family: 'Playfair Display', serif;">Our Services</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 text-charcoal" style="font-family: 'Playfair Display', serif;">Our Services</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <div class="service-card bg-white p-6 rounded-lg shadow-lg">
-          <h3 class="text-xl font-semibold mb-3 text-charcoal" style="font-family: 'Roboto', sans-serif;">Content Writing</h3>
-          <p class="text-gray">Engaging blog posts, articles, and web content tailored to your brand.</p>
+          <h3 class="text-lg sm:text-xl font-semibold mb-3 text-charcoal" style="font-family: 'Roboto', sans-serif;">Content Writing</h3>
+          <p class="text-gray text-sm sm:text-base">Engaging blog posts, articles, and web content tailored to your brand.</p>
         </div>
         <div class="service-card bg-white p-6 rounded-lg shadow-lg">
-          <h3 class="text-xl font-semibold mb-3 text-charcoal" style="font-family: 'Roboto', sans-serif;">Copywriting</h3>
-          <p class="text-gray">Persuasive ad copy, email campaigns, and product descriptions that convert.</p>
+          <h3 class="text-lg sm:text-xl font-semibold mb-3 text-charcoal" style="font-family: 'Roboto', sans-serif;">Copywriting</h3>
+          <p class="text-gray text-sm sm:text-base">Persuasive ad copy, email campaigns, and product descriptions that convert.</p>
         </div>
         <div class="service-card bg-white p-6 rounded-lg shadow-lg">
-          <h3 class="text-xl font-semibold mb-3 text-charcoal" style="font-family: 'Roboto', sans-serif;">Technical Writing</h3>
-          <p class="text-gray">Clear, concise manuals, whitepapers, and documentation.</p>
+          <h3 class="text-lg sm:text-xl font-semibold mb-3 text-charcoal" style="font-family: 'Roboto', sans-serif;">Technical Writing</h3>
+          <p class="text-gray text-sm sm:text-base">Clear, concise manuals, whitepapers, and documentation.</p>
         </div>
         <div class="service-card bg-white p-6 rounded-lg shadow-lg">
-          <h3 class="text-xl font-semibold mb-3 text-charcoal" style="font-family: 'Roboto', sans-serif;">Creative Writing</h3>
-          <p class="text-gray">Captivating stories, scripts, and creative content for any medium.</p>
+          <h3 class="text-lg sm:text-xl font-semibold mb-3 text-charcoal" style="font-family: 'Roboto', sans-serif;">Creative Writing</h3>
+          <p class="text-gray text-sm sm:text-base">Captivating stories, scripts, and creative content for any medium.</p>
         </div>
         <div class="service-card bg-white p-6 rounded-lg shadow-lg">
-          <h3 class="text-xl font-semibold mb-3 text-charcoal" style="font-family: 'Roboto', sans-serif;">Editing & Proofreading</h3>
-          <p class="text-gray">Polished, error-free content with meticulous attention to detail.</p>
+          <h3 class="text-lg sm:text-xl font-semibold mb-3 text-charcoal" style="font-family: 'Roboto', sans-serif;">Editing & Proofreading</h3>
+          <p class="text-gray text-sm sm:text-base">Polished, error-free content with meticulous attention to detail.</p>
         </div>
         <div class="service-card bg-white p-6 rounded-lg shadow-lg">
-          <h3 class="text-xl font-semibold mb-3 text-charcoal" style="font-family: 'Roboto', sans-serif;">Academic Writing</h3>
-          <p class="text-gray">High-quality essays, research papers, and dissertations.</p>
+          <h3 class="text-lg sm:text-xl font-semibold mb-3 text-charcoal" style="font-family: 'Roboto', sans-serif;">Academic Writing</h3>
+          <p class="text-gray text-sm sm:text-base">High-quality essays, research papers, and dissertations.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Portfolio -->
-  <section id="portfolio" class="py-20 bg-pearl">
+  <section id="portfolio" class="py-16 bg-pearl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl font-bold text-center mb-12 text-charcoal" style="font-family: 'Playfair Display', serif;">Our Work</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 text-charcoal" style="font-family: 'Playfair Display', serif;">Our Work</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-2 text-charcoal" style="font-family: 'Roboto', sans-serif;">Tech Startup Blog</h3>
-          <p class="text-gray mb-2">Series of SEO-optimized blog posts driving 50% more traffic.</p>
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-charcoal" style="font-family: 'Roboto', sans-serif;">Tech Startup Blog</h3>
+          <p class="text-gray text-sm sm:text-base mb-2">Series of SEO-optimized blog posts driving 50% more traffic.</p>
           <span class="text-sm text-indigo">Content Writing</span>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-2 text-charcoal" style="font-family: 'Roboto', sans-serif;">E-commerce Campaign</h3>
-          <p class="text-gray mb-2">Email copy that boosted conversions by 30%.</p>
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-charcoal" style="font-family: 'Roboto', sans-serif;">E-commerce Campaign</h3>
+          <p class="text-gray text-sm sm:text-base mb-2">Email copy that boosted conversions by 30%.</p>
           <span class="text-sm text-indigo">Copywriting</span>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-2 text-charcoal" style="font-family: 'Roboto', sans-serif;">Software Manual</h3>
-          <p class="text-gray mb-2">Comprehensive user guide for a SaaS platform.</p>
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-charcoal" style="font-family: 'Roboto', sans-serif;">Software Manual</h3>
+          <p class="text-gray text-sm sm:text-base mb-2">Comprehensive user guide for a SaaS platform.</p>
           <span class="text-sm text-indigo">Technical Writing</span>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-2 text-charcoal" style="font-family: 'Roboto', sans-serif;">Short Film Script</h3>
-          <p class="text-gray mb-2">Award-nominated script for a local film festival.</p>
+          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-charcoal" style="font-family: 'Roboto', sans-serif;">Short Film Script</h3>
+          <p class="text-gray text-sm sm:text-base mb-2">Award-nominated script for a local film festival.</p>
           <span class="text-sm text-indigo">Creative Writing</span>
         </div>
       </div>
-      <div class="text-center mt-12">
-        <a href="portfolio.html" class="text-green font-semibold hover:text-green-dark">View More Projects</a>
+      <div class="text-center mt-10">
+        <a href="portfolio.html" class="text-green font-semibold hover:text-green-dark text-base sm:text-lg">View More Projects</a>
       </div>
     </div>
   </section>
 
   <!-- About -->
-  <section id="about" class="py-20 bg-pearl">
+  <section id="about" class="py-16 bg-pearl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl font-bold text-center mb-12 text-charcoal" style="font-family: 'Playfair Display', serif;">About Saphar</h2>
-      <div class="flex flex-col md:flex-row items-center">
-        <div class="md:w-1/2 mb-6 md:mb-0">
-          <img src="https://images.unsplash.com/photo-1516321310768-61ca9eab3b38?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team working" class="rounded-lg shadow-md">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 text-charcoal" style="font-family: 'Playfair Display', serif;">About Saphar</h2>
+      <div class="flex flex-col items-center">
+        <div class="w-full mb-6">
+          <img src="https://images.unsplash.com/photo-1516321310768-61ca9eab3b38?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team working" class="rounded-lg shadow-md w-full h-auto">
         </div>
-        <div class="md:w-1/2 md:pl-8">
-          <p class="text-gray mb-4" style="font-family: 'Roboto', sans-serif;">
+        <div class="w-full">
+          <p class="text-gray text-sm sm:text-base mb-4" style="font-family: 'Roboto', sans-serif;">
             Founded with a passion for words, Saphar is a premier writing company delivering top-tier services across industries. With over 100 successful projects, our experienced team crafts compelling content that resonates with your audience.
           </p>
-          <p class="text-gray" style="font-family: 'Roboto', sans-serif;">
+          <p class="text-gray text-sm sm:text-base" style="font-family: 'Roboto', sans-serif;">
             From creative storytelling to technical precision, we handle every project with creativity, professionalism, and a commitment to excellence.
           </p>
         </div>
@@ -166,26 +193,26 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="py-20 bg-pearl">
+  <section id="contact" class="py-16 bg-pearl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl font-bold text-center mb-12 text-charcoal" style="font-family: 'Playfair Display', serif;">Get in Touch</h2>
-      <div class="flex flex-col md:flex-row gap-8">
-        <div class="md:w-1/2">
-          <p class="text-gray mb-4" style="font-family: 'Roboto', sans-serif;">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 text-charcoal" style="font-family: 'Playfair Display', serif;">Get in Touch</h2>
+      <div class="flex flex-col gap-6">
+        <div>
+          <p class="text-gray text-sm sm:text-base mb-4" style="font-family: 'Roboto', sans-serif;">
             Ready to elevate your content? Contact us today for a free consultation or quote.
           </p>
-          <p class="text-gray" style="font-family: 'Roboto', sans-serif;">
+          <p class="text-gray text-sm sm:text-base" style="font-family: 'Roboto', sans-serif;">
             Email: contact@saphar.com<br>
             Phone: (123) 456-7890<br>
             Address: 123, Success City
           </p>
         </div>
-        <div class="md:w-1/2">
+        <div>
           <div class="bg-parchment p-6 rounded-lg">
-            <input type="text" id="name" placeholder="Your Name" class="w-full p-3 mb-4 border border-charcoal rounded bg-white text-gray">
-            <input type="email" id="email" placeholder="Your Email" class="w-full p-3 mb-4 border border-charcoal rounded bg-white text-gray">
-            <textarea id="message" placeholder="Your Message" class="w-full p-3 mb-4 border border-charcoal rounded bg-white text-gray" rows="4"></textarea>
-            <button id="submit-btn" class="bg-indigo text-white px-6 py-3 rounded-full hover:bg-indigo-dark transition">Send Message</button>
+            <input type="text" id="name" placeholder="Your Name" class="w-full p-3 mb-4 border border-charcoal rounded bg-white text-gray text-sm sm:text-base">
+            <input type="email" id="email" placeholder="Your Email" class="w-full p-3 mb-4 border border-charcoal rounded bg-white text-gray text-sm sm:text-base">
+            <textarea id="message" placeholder="Your Message" class="w-full p-3 mb-4 border border-charcoal rounded bg-white text-gray text-sm sm:text-base" rows="4"></textarea>
+            <button id="submit-btn" class="bg-indigo text-white px-6 py-3 rounded-full hover:bg-indigo-dark transition w-full sm:w-auto">Send Message</button>
           </div>
         </div>
       </div>
@@ -198,8 +225,8 @@
       <div class="flex flex-col md:flex-row justify-between items-center">
         <p class="text-sm text-white" style="font-family: 'Roboto', sans-serif;">© 2025 Saphar. All rights reserved.</p>
         <div class="flex space-x-4 mt-4 md:mt-0">
-          <a href="/privacy" class="text-green hover:text-green-dark">Privacy Policy</a>
-          <a href="/terms" class="text-green hover:text-green-dark">Terms of Service</a>
+          <a href="/privacy" class="text-green hover:text-green-dark text-sm sm:text-base">Privacy Policy</a>
+          <a href="/terms" class="text-green hover:text-green-dark text-sm sm:text-base">Terms of Service</a>
         </div>
       </div>
     </div>
@@ -213,14 +240,23 @@
         document.querySelector(this.getAttribute('href')).scrollIntoView({
           behavior: 'smooth'
         });
+        // Close mobile menu if open
+        mobileMenu.classList.add('hidden');
       });
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
     });
 
     // Form submission handling (logs to console)
     const submitBtn = document.getElementById('submit-btn');
     submitBtn.addEventListener('click', function (e) {
       e.preventDefault();
-      submitBtn.disabled = true; // Prevent multiple submissions
+      submitBtn.disabled = true;
       const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
       const message = document.getElementById('message').value;
