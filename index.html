@@ -3,274 +3,124 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Saphar Writing Services Portfolio">
-  <title>Saphar - Premier Writing Services</title>
+  <title>Saphar - Editorial Writing Studio</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
   <style>
-    .hero-bg {
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-      background-size: cover;
-      background-position: center;
+    body {
+      background: url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
+      background-color: #fdfcf9;
+      color: #333;
     }
-    .animate-slide-up {
-      animation: slideUp 1s ease-out;
+    h1, h2, h3 {
+      font-family: 'Patrick Hand', cursive;
     }
-    @keyframes slideUp {
-      from { transform: translateY(50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+    .service-card {
+      background: #fffbec;
+      border: 2px dashed #fbbf24;
+      border-radius: 12px;
+      transform: rotate(-1deg);
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .service-card:hover {
-      transform: translateY(-10px);
-      transition: transform 0.3s ease;
+      transform: rotate(0deg) scale(1.05);
+      box-shadow: 8px 8px 25px rgba(0,0,0,0.15);
     }
-    .typewriter {
-      overflow: hidden;
-      white-space: nowrap;
-      animation: typing 3.5s steps(40, end);
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
     }
-    /* Custom color palette */
-    .bg-pearl { background-color: #F7F7F5; }
-    .bg-ink { background-color: #0A1416; }
-    .bg-parchment { background-color: #ECECE8; }
-    .bg-indigo { background-color: #4F46E5; }
-    .hover\:bg-indigo-dark:hover { background-color: #4338CA; }
-    .text-charcoal { color: #111827; }
-    .text-gray { color: #6B7280; }
-    .text-white { color: #FFFFFF; }
-    .text-indigo { color: #4F46E5; }
-    .text-green { color: #10B981; }
-    .hover\:text-green-dark:hover { color: #059669; }
-    .border-charcoal { border-color: #111827; }
-    input::placeholder, textarea::placeholder { color: #6B7280; opacity: 0.7; }
-    /* Mobile menu styles */
-    .mobile-menu {
-      transition: transform 0.3s ease-in-out;
+    .scribble-divider {
+      border-top: 2px dashed #ccc; /* Creates a dashed line */
+      margin: 20px 0; /* Adds vertical spacing */
+      width: 80%; /* Adjust the width of the divider */
+      margin-left: auto;
+      margin-right: auto; /* Centers the divider */
     }
-    .mobile-menu.hidden {
-      transform: translateX(100%);
+    .scribble-divider img {
+      display: none; /* Hides the image tag since we're using CSS */
     }
   </style>
 </head>
-<body class="scroll-smooth">
-  <!-- Navbar -->
-  <nav class="fixed top-0 w-full bg-ink shadow-md z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-16">
-        <div class="flex items-center">
-          <h1 class="text-2xl font-bold text-white" style="font-family: 'Playfair Display', serif;">Saphar</h1>
-        </div>
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex items-center space-x-4">
-          <a href="#home" class="text-green hover:text-green-dark">Home</a>
-          <a href="#services" class="text-green hover:text-green-dark">Services</a>
-          <a href="portfolio.html" class="text-green hover:text-green-dark">Portfolio</a>
-          <a href="#about" class="text-green hover:text-green-dark">About</a>
-          <a href="#contact" class="text-green hover:text-green-dark">Contact</a>
-        </div>
-        <!-- Mobile Menu Button -->
-        <div class="md:hidden flex items-center">
-          <button id="mobile-menu-btn" class="text-white focus:outline-none">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden mobile-menu hidden fixed top-16 right-0 w-3/4 bg-ink text-white shadow-lg">
-      <div class="flex flex-col space-y-4 p-4">
-        <a href="#home" class="text-green hover:text-green-dark">Home</a>
-        <a href="#services" class="text-green hover:text-green-dark">Services</a>
-        <a href="portfolio.html" class="text-green hover:text-green-dark">Portfolio</a>
-        <a href="#about" class="text-green hover:text-green-dark">About</a>
-        <a href="#contact" class="text-green hover:text-green-dark">Contact</a>
-      </div>
+<body>
+  <nav class="p-4 bg-white shadow-md flex justify-between items-center">
+    <h1 class="text-2xl text-indigo-600">Saphar</h1>
+    <div class="space-x-4">
+      <a href="#services" class="hover:text-indigo-600">Services</a>
+      <a href="#about" class="hover:text-indigo-600">About</a>
+      <a href="#contact" class="hover:text-indigo-600">Contact</a>
+      <a href="/portfolio.html" class="hover:text-indigo-600">Portfolio</a>
+
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section id="home" class="hero-bg h-screen flex items-center justify-center text-center text-white">
-    <div class="animate-slide-up px-4">
-      <h1 class="typewriter text-3xl sm:text-4xl md:text-6xl font-bold mb-4" style="font-family: 'Playfair Display', serif;">
-        Crafting Words That Inspire
-      </h1>
-      <p class="text-base sm:text-lg md:text-xl mb-6 max-w-xl mx-auto" style="font-family: 'Roboto', sans-serif;">
-        Saphar delivers exceptional writing services for every need, with over 100 successful projects and counting.
-      </p>
-      <a href="#contact" class="bg-indigo text-white px-6 py-3 rounded-full hover:bg-indigo-dark transition">Get a Quote</a>
+  <header class="relative text-center py-20">
+    <div class="inline-block bg-yellow-300 px-2 py-1 rounded-sm rotate-2 shadow-md">
+      <h1 class="text-4xl">Bad writing is expensive. We’re affordable.</h1>
     </div>
-  </section>
+    <p class="mt-4">From study visas to straight A’s, we’ve saved more lives than caffeine.</p>
+    <a href="#contact" class="mt-6 inline-block bg-indigo-600 text-white px-6 py-3 rounded-full hover:bg-indigo-700">Get a Quote</a>
+    <img src="https://www.svgrepo.com/show/3731/pen.svg" alt="Floating Pen" class="absolute top-10 right-10 w-16 h-16 animate-float">
+  </header>
 
-  <!-- Services -->
-  <section id="services" class="py-16 bg-pearl">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 text-charcoal" style="font-family: 'Playfair Display', serif;">Our Services</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <div class="service-card bg-white p-6 rounded-lg shadow-lg">
-          <h3 class="text-lg sm:text-xl font-semibold mb-3 text-charcoal" style="font-family: 'Roboto', sans-serif;">Content Writing</h3>
-          <p class="text-gray text-sm sm:text-base">Engaging blog posts, articles, and web content tailored to your brand.</p>
-        </div>
-        <div class="service-card bg-white p-6 rounded-lg shadow-lg">
-          <h3 class="text-lg sm:text-xl font-semibold mb-3 text-charcoal" style="font-family: 'Roboto', sans-serif;">Copywriting</h3>
-          <p class="text-gray text-sm sm:text-base">Persuasive ad copy, email campaigns, and product descriptions that convert.</p>
-        </div>
-        <div class="service-card bg-white p-6 rounded-lg shadow-lg">
-          <h3 class="text-lg sm:text-xl font-semibold mb-3 text-charcoal" style="font-family: 'Roboto', sans-serif;">Technical Writing</h3>
-          <p class="text-gray text-sm sm:text-base">Clear, concise manuals, whitepapers, and documentation.</p>
-        </div>
-        <div class="service-card bg-white p-6 rounded-lg shadow-lg">
-          <h3 class="text-lg sm:text-xl font-semibold mb-3 text-charcoal" style="font-family: 'Roboto', sans-serif;">Creative Writing</h3>
-          <p class="text-gray text-sm sm:text-base">Captivating stories, scripts, and creative content for any medium.</p>
-        </div>
-        <div class="service-card bg-white p-6 rounded-lg shadow-lg">
-          <h3 class="text-lg sm:text-xl font-semibold mb-3 text-charcoal" style="font-family: 'Roboto', sans-serif;">Editing & Proofreading</h3>
-          <p class="text-gray text-sm sm:text-base">Polished, error-free content with meticulous attention to detail.</p>
-        </div>
-        <div class="service-card bg-white p-6 rounded-lg shadow-lg">
-          <h3 class="text-lg sm:text-xl font-semibold mb-3 text-charcoal" style="font-family: 'Roboto', sans-serif;">Academic Writing</h3>
-          <p class="text-gray text-sm sm:text-base">High-quality essays, research papers, and dissertations.</p>
-        </div>
+  <div class="scribble-divider">
+    </div>
+
+  <section id="services" class="p-8">
+    <h2 class="text-center text-3xl mb-8">Our Services</h2>
+    <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      <div class="service-card p-4">
+        <h3 class="text-xl">Technical Writing</h3>
+        <p>Clarity without compromise. We untangle jargon and make your work shine.</p>
+      </div>
+      <div class="service-card p-4">
+        <h3 class="text-xl">Content Writing</h3>
+        <p>Human-first copy for blogs, bios, and campaigns that actually sound like you.</p>
+      </div>
+      <div class="service-card p-4">
+        <h3 class="text-xl">Creative Writing</h3>
+        <p>We sculpt stories, sharpen voice, and cut the fluff.</p>
+      </div>
+      <div class="service-card p-4">
+        <h3 class="text-xl">Business Writing</h3>
+        <p>Proposals, reports, and communications that sound clear, not corporate.</p>
+      </div>
+      <div class="service-card p-4">
+        <h3 class="text-xl">Editing & Proofreading</h3>
+        <p>We polish your drafts into ready-to-publish gems.</p>
       </div>
     </div>
   </section>
 
-  <!-- Portfolio -->
-  <section id="portfolio" class="py-16 bg-pearl">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 text-charcoal" style="font-family: 'Playfair Display', serif;">Our Work</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-charcoal" style="font-family: 'Roboto', sans-serif;">Tech Startup Blog</h3>
-          <p class="text-gray text-sm sm:text-base mb-2">Series of SEO-optimized blog posts driving 50% more traffic.</p>
-          <span class="text-sm text-indigo">Content Writing</span>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-charcoal" style="font-family: 'Roboto', sans-serif;">E-commerce Campaign</h3>
-          <p class="text-gray text-sm sm:text-base mb-2">Email copy that boosted conversions by 30%.</p>
-          <span class="text-sm text-indigo">Copywriting</span>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-charcoal" style="font-family: 'Roboto', sans-serif;">Software Manual</h3>
-          <p class="text-gray text-sm sm:text-base mb-2">Comprehensive user guide for a SaaS platform.</p>
-          <span class="text-sm text-indigo">Technical Writing</span>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-lg sm:text-xl font-semibold mb-2 text-charcoal" style="font-family: 'Roboto', sans-serif;">Short Film Script</h3>
-          <p class="text-gray text-sm sm:text-base mb-2">Award-nominated script for a local film festival.</p>
-          <span class="text-sm text-indigo">Creative Writing</span>
-        </div>
-      </div>
-      <div class="text-center mt-10">
-        <a href="portfolio.html" class="text-green font-semibold hover:text-green-dark text-base sm:text-lg">View More Projects</a>
-      </div>
+  <div class="scribble-divider">
     </div>
+
+  <section id="about" class="p-8 text-center">
+    <h2 class="text-3xl mb-4">About Saphar</h2>
+    <p class="max-w-2xl mx-auto">Born out of frustration with bland, lifeless writing, Saphar helps you say what you mean—better. We’ve worked with clients across Nigeria and abroad on everything from academic SOPs to technical whitepapers.</p>
   </section>
 
-  <!-- About -->
-  <section id="about" class="py-16 bg-pearl">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 text-charcoal" style="font-family: 'Playfair Display', serif;">About Saphar</h2>
-      <div class="flex flex-col items-center">
-        <div class="w-full mb-6">
-          <img src="https://images.unsplash.com/photo-1516321310768-61ca9eab3b38?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team working" class="rounded-lg shadow-md w-full h-auto">
-        </div>
-        <div class="w-full">
-          <p class="text-gray text-sm sm:text-base mb-4" style="font-family: 'Roboto', sans-serif;">
-            Founded with a passion for words, Saphar is a premier writing company delivering top-tier services across industries. With over 100 successful projects, our experienced team crafts compelling content that resonates with your audience.
-          </p>
-          <p class="text-gray text-sm sm:text-base" style="font-family: 'Roboto', sans-serif;">
-            From creative storytelling to technical precision, we handle every project with creativity, professionalism, and a commitment to excellence.
-          </p>
-        </div>
-      </div>
+  <div class="scribble-divider">
     </div>
+
+  <section id="contact" class="p-8 text-center">
+    <h2 class="text-3xl mb-4">Get in Touch</h2>
+    <p>Send us a message. Let’s bring your words to life.</p>
+    <form class="mt-4 max-w-md mx-auto space-y-4">
+      <input type="text" placeholder="Your Name" class="w-full p-2 border border-gray-300 rounded">
+      <input type="email" placeholder="Your Email" class="w-full p-2 border border-gray-300 rounded">
+      <textarea placeholder="Your Message" rows="4" class="w-full p-2 border border-gray-300 rounded"></textarea>
+      <button class="w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700">Send Message</button>
+    </form>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-16 bg-pearl">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 text-charcoal" style="font-family: 'Playfair Display', serif;">Get in Touch</h2>
-      <div class="flex flex-col gap-6">
-        <div>
-          <p class="text-gray text-sm sm:text-base mb-4" style="font-family: 'Roboto', sans-serif;">
-            Ready to elevate your content? Contact us today for a free consultation or quote.
-          </p>
-          <p class="text-gray text-sm sm:text-base" style="font-family: 'Roboto', sans-serif;">
-            Email: contact@saphar.com<br>
-            Phone: (123) 456-7890<br>
-            Address: 123, Success City
-          </p>
-        </div>
-        <div>
-          <div class="bg-parchment p-6 rounded-lg">
-            <input type="text" id="name" placeholder="Your Name" class="w-full p-3 mb-4 border border-charcoal rounded bg-white text-gray text-sm sm:text-base">
-            <input type="email" id="email" placeholder="Your Email" class="w-full p-3 mb-4 border border-charcoal rounded bg-white text-gray text-sm sm:text-base">
-            <textarea id="message" placeholder="Your Message" class="w-full p-3 mb-4 border border-charcoal rounded bg-white text-gray text-sm sm:text-base" rows="4"></textarea>
-            <button id="submit-btn" class="bg-indigo text-white px-6 py-3 rounded-full hover:bg-indigo-dark transition w-full sm:w-auto">Send Message</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-ink text-white py-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        <p class="text-sm text-white" style="font-family: 'Roboto', sans-serif;">© 2025 Saphar. All rights reserved.</p>
-        <div class="flex space-x-4 mt-4 md:mt-0">
-          <a href="/privacy" class="text-green hover:text-green-dark text-sm sm:text-base">Privacy Policy</a>
-          <a href="/terms" class="text-green hover:text-green-dark text-sm sm:text-base">Terms of Service</a>
-        </div>
-      </div>
-    </div>
+  <footer class="mt-8 p-4 bg-white text-center shadow-inner">
+    <p>&copy; 2025 Saphar. All rights reserved.</p>
   </footer>
 
-  <script>
-    // Smooth scrolling for nav links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-        // Close mobile menu if open
-        mobileMenu.classList.add('hidden');
-      });
-    });
-
-    // Mobile menu toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    // Form submission handling (logs to console)
-    const submitBtn = document.getElementById('submit-btn');
-    submitBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      submitBtn.disabled = true;
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
-      if (name && email && message) {
-        console.log('Form submitted:', { name, email, message });
-        alert('Message sent! We will get back to you soon.');
-        document.getElementById('name').value = '';
-        document.getElementById('email').value = '';
-        document.getElementById('message').value = '';
-      } else {
-        alert('Please fill out all fields.');
-      }
-      submitBtn.disabled = false;
-    });
-  </script>
 </body>
 </html>

@@ -5,159 +5,132 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Saphar - Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
   <style>
-    .animate-slide-up {
-      animation: slideUp 1s ease-out;
+    body {
+      background: url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
+      background-color: #fdfcf9;
+      color: #333;
     }
-    @keyframes slideUp {
-      from { transform: translateY(50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+    h1, h2, h3 {
+      font-family: 'Patrick Hand', cursive;
+    }
+    .project-card {
+      background: #fffbec;
+      border: 2px dashed #fbbf24;
+      border-radius: 12px;
+      transform: rotate(-1deg);
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .project-card:hover {
-      transform: translateY(-10px);
-      transition: transform 0.3s ease;
+      transform: rotate(0deg) scale(1.05);
+      box-shadow: 8px 8px 25px rgba(0,0,0,0.15);
     }
-    /* Custom color palette */
-    .bg-pearl { background-color: #F7F7F5; }
-    .bg-ink { background-color: #0A1416; }
-    .bg-parchment { background-color: #ECECE8; }
-    .bg-indigo { background-color: #4F46E5; }
-    .hover\:bg-indigo-dark:hover { background-color: #4338CA; }
-    .text-charcoal { color: #111827; }
-    .text-gray { color: #6B7280; }
-    .text-white { color: #FFFFFF; }
-    .text-indigo { color: #4F46E5; }
-    .text-green { color: #10B981; }
-    .hover\:text-green-dark:hover { color: #059669; }
-    .border-charcoal { border-color: #111827; }
+    .filter-btn {
+      background: #fffbec;
+      border: 2px dashed #fbbf24;
+      border-radius: 12px;
+      transform: rotate(-2deg);
+      box-shadow: 3px 3px 10px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
+    }
+    .filter-btn:hover {
+      transform: rotate(0deg) scale(1.05);
+      background-color: #fbbf24;
+      color: white;
+    }
+        .scribble-divider {
+      border-top: 2px dashed #ccc; /* Creates a dashed line */
+      margin: 20px 0; /* Adds vertical spacing */
+      width: 80%; /* Adjust the width of the divider */
+      margin-left: auto;
+      margin-right: auto; /* Centers the divider */
+    }
+    .scribble-divider img {
+      display: block;
+      margin: 0 auto;
+      max-width: 200px;
+    }
   </style>
 </head>
-<body class="scroll-smooth">
-  <!-- Navbar -->
-  <nav class="fixed top-0 w-full bg-ink shadow-md z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-16">
-        <div class="flex items-center">
-          <h1 class="text-2xl font-bold text-white" style="font-family: 'Playfair Display', serif;">Saphar</h1>
-        </div>
-        <div class="flex items-center space-x-4">
-          <a href="index.html#home" class="text-green hover:text-green-dark">Home</a>
-          <a href="index.html#services" class="text-green hover:text-green-dark">Services</a>
-          <a href="portfolio.html" class="text-green hover:text-green-dark">Portfolio</a>
-          <a href="index.html#about" class="text-green hover:text-green-dark">About</a>
-          <a href="index.html#contact" class="text-green hover:text-green-dark">Contact</a>
-        </div>
-      </div>
+<body>
+  <nav class="p-4 bg-white shadow-md flex justify-between items-center">
+    <h1 class="text-2xl text-indigo-600">Saphar</h1>
+    <div class="space-x-4">
+      <a href="index.html#home" class="hover:text-indigo-600">Home</a>
+      <a href="index.html#services" class="hover:text-indigo-600">Services</a>
+      <a href="portfolio.html" class="hover:text-indigo-600">Portfolio</a>
+      <a href="index.html#about" class="hover:text-indigo-600">About</a>
+      <a href="index.html#contact" class="hover:text-indigo-600">Contact</a>
     </div>
   </nav>
 
-  <!-- Portfolio -->
-  <section id="portfolio" class="py-20 bg-pearl">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl font-bold text-center mb-12 text-charcoal" style="font-family: 'Playfair Display', serif;">Our Portfolio</h2>
-      <!-- Filter Buttons -->
-      <div class="flex flex-wrap justify-center gap-4 mb-12">
-        <button class="filter-btn bg-indigo text-white px-4 py-2 rounded-full hover:bg-indigo-dark transition" data-category="all">All</button>
-        <button class="filter-btn bg-indigo text-white px-4 py-2 rounded-full hover:bg-indigo-dark transition" data-category="content">Content Writing</button>
-        <button class="filter-btn bg-indigo text-white px-4 py-2 rounded-full hover:bg-indigo-dark transition" data-category="copywriting">Copywriting</button>
-        <button class="filter-btn bg-indigo text-white px-4 py-2 rounded-full hover:bg-indigo-dark transition" data-category="technical">Technical Writing</button>
-        <button class="filter-btn bg-indigo text-white px-4 py-2 rounded-full hover:bg-indigo-dark transition" data-category="creative">Creative Writing</button>
-      </div>
-      <!-- Project Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="project-card bg-parchment p-6 rounded-lg shadow-lg animate-slide-up" data-category="content">
-          <h3 class="text-xl font-semibold mb-2 text-charcoal" style="font-family: 'Roboto', sans-serif;">Tech Startup Blog</h3>
-          <p class="text-gray mb-2">Wrote 20 SEO-optimized blog posts for TechTrend Innovations, increasing website traffic by 50%.</p>
-          <p class="text-gray mb-2"><strong>Client:</strong> TechTrend Innovations</p>
-          <span class="text-sm text-indigo">Content Writing</span>
-        </div>
-        <div class="project-card bg-parchment p-6 rounded-lg shadow-lg animate-slide-up" data-category="copywriting">
-          <h3 class="text-xl font-semibold mb-2 text-charcoal" style="font-family: 'Roboto', sans-serif;">E-commerce Campaign</h3>
-          <p class="text-gray mb-2">Crafted email and ad copy for ShopWave, boosting conversions by 30% in Q2.</p>
-          <p class="text-gray mb-2"><strong>Client:</strong> ShopWave</p>
-          <span class="text-sm text-indigo">Copywriting</span>
-        </div>
-        <div class="project-card bg-parchment p-6 rounded-lg shadow-lg animate-slide-up" data-category="technical">
-          <h3 class="text-xl font-semibold mb-2 text-charcoal" style="font-family: 'Roboto', sans-serif;">Software Manual</h3>
-          <p class="text-gray mb-2">Developed a 100-page user guide for CloudCore’s SaaS platform, improving user onboarding.</p>
-          <p class="text-gray mb-2"><strong>Client:</strong> CloudCore</p>
-          <span class="text-sm text-indigo">Technical Writing</span>
-        </div>
-        <div class="project-card bg-parchment p-6 rounded-lg shadow-lg animate-slide-up" data-category="creative">
-          <h3 class="text-xl font-semibold mb-2 text-charcoal" style="font-family: 'Roboto', sans-serif;">Short Film Script</h3>
-          <p class="text-gray mb-2">Wrote an award-nominated script for Horizon Films, premiered at a local festival.</p>
-          <p class="text-gray mb-2"><strong>Client:</strong> Horizon Films</p>
-          <span class="text-sm text-indigo">Creative Writing</span>
-        </div>
-        <div class="project-card bg-parchment p-6 rounded-lg shadow-lg animate-slide-up" data-category="content">
-          <h3 class="text-xl font-semibold mb-2 text-charcoal" style="font-family: 'Roboto', sans-serif;">Health & Wellness Articles</h3>
-          <p class="text-gray mb-2">Produced 15 articles for VitaFit, driving 40% more engagement on their blog.</p>
-          <p class="text-gray mb-2"><strong>Client:</strong> VitaFit</p>
-          <span class="text-sm text-indigo">Content Writing</span>
-        </div>
-        <div class="project-card bg-parchment p-6 rounded-lg shadow-lg animate-slide-up" data-category="copywriting">
-          <h3 class="text-xl font-semibold mb-2 text-charcoal" style="font-family: 'Roboto', sans-serif;">Nonprofit Fundraising Campaign</h3>
-          <p class="text-gray mb-2">Created compelling copy for HopeRise, raising $50,000 in donations.</p>
-          <p class="text-gray mb-2"><strong>Client:</strong> HopeRise</p>
-          <span class="text-sm text-indigo">Copywriting</span>
-        </div>
-      </div>
+  <header class="relative text-center py-16">
+    <div class="inline-block bg-yellow-300 px-2 py-1 rounded-sm rotate-2 shadow-md">
+      <h1 class="text-4xl">Our Portfolio</h1>
+    </div>
+    <img src="https://www.svgrepo.com/show/403953/pen.svg" alt="Floating Pen" class="absolute top-10 right-10 w-16 h-16 animate-float">
+  </header>
+
+  <div class="scribble-divider">
+    </div>
+
+
+  <section class="p-8">
+    <div class="flex flex-wrap justify-center gap-4 mb-8">
+      <button class="filter-btn px-4 py-2" data-category="all">All</button>
+      <button class="filter-btn px-4 py-2" data-category="sop">SOPs</button>
+      <button class="filter-btn px-4 py-2" data-category="technical">Technical Reports</button>
+      <button class="filter-btn px-4 py-2" data-category="content">Content Writing</button>
+      <button class="filter-btn px-4 py-2" data-category="copywriting">Copywriting</button>
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      <a href="project-sop-cybersecurity.html" class="project-card p-4 block" data-category="sop">
+        <h3 class="text-xl">SOP – MSc Cybersecurity (UK)</h3>
+        <p>Crafted a compelling SOP weaving 10+ years of IT and entrepreneurship into a cybersecurity pivot.</p>
+      </a>
+      <a href="project-sop-business.html" class="project-card p-4 block" data-category="sop">
+        <h3 class="text-xl">SOP – MRes Business & Management</h3>
+        <p>Blended philosophy, leadership, and business management into a cohesive academic journey.</p>
+      </a>
+      <a href="project-tech-lung-cancer.html" class="project-card p-4 block" data-category="technical">
+        <h3 class="text-xl">Technical Report – Medical Imaging</h3>
+        <p>Presented an AI approach to lung cancer detection using CT scan analysis and machine learning.</p>
+      </a>
+      <a href="#" class="project-card p-4 block" data-category="content">
+        <h3 class="text-xl">Tech Blog – AI & the Future of Creativity</h3>
+        <p>A series of blog posts explaining generative AI in simple, punchy language for non-tech readers.</p>
+      </a>
+      <a href="#" class="project-card p-4 block" data-category="copywriting">
+        <h3 class="text-xl">Fundraising Campaign – HopeRise</h3>
+        <p>Wrote emotionally resonant copy for a nonprofit campaign that raised $50,000 in 6 weeks.</p>
+      </a>
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="py-20 bg-pearl">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl font-bold text-center mb-12 text-charcoal" style="font-family: 'Playfair Display', serif;">What Our Clients Say</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-parchment p-6 rounded-lg shadow-lg animate-slide-up">
-          <p class="text-gray mb-4 italic" style="font-family: 'Roboto', sans-serif;">
-            “Saphar’s blog posts transformed our online presence. Their writing is engaging and perfectly aligned with our brand.”
-          </p>
-          <p class="text-charcoal font-semibold">— Sarah T., TechTrend Innovations</p>
-        </div>
-        <div class="bg-parchment p-6 rounded-lg shadow-lg animate-slide-up">
-          <p class="text-gray mb-4 italic" style="font-family: 'Roboto', sans-serif;">
-            “The copywriting for our campaign was spot-on, driving incredible results. Saphar is our go-to for all writing needs.”
-          </p>
-          <p class="text-charcoal font-semibold">— Mark R., ShopWave</p>
-        </div>
-      </div>
+  <div class="scribble-divider">
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="bg-ink text-white py-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        <p class="text-sm text-white" style="font-family: 'Roboto', sans-serif;">© 2025 Saphar. All rights reserved.</p>
-        <div class="flex space-x-4 mt-4 md:mt-0">
-          <a href="/privacy" class="text-green hover:text-green-dark">Privacy Policy</a>
-          <a href="/terms" class="text-green hover:text-green-dark">Terms of Service</a>
-        </div>
-      </div>
-    </div>
+
+  <footer class="mt-8 p-4 bg-white text-center shadow-inner">
+    <p>&copy; 2025 Saphar. All rights reserved.</p>
   </footer>
 
   <script>
-    // Portfolio filter functionality
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
 
     filterButtons.forEach(button => {
       button.addEventListener('click', () => {
         const category = button.getAttribute('data-category');
-        
-        // Update active button styling
-        filterButtons.forEach(btn => btn.classList.remove('bg-indigo-dark'));
-        button.classList.add('bg-indigo-dark');
 
-        // Show/hide projects based on category
+        filterButtons.forEach(btn => btn.classList.remove('bg-yellow-300'));
+        button.classList.add('bg-yellow-300');
+
         projectCards.forEach(card => {
           if (category === 'all' || card.getAttribute('data-category') === category) {
             card.style.display = 'block';
-            card.classList.add('animate-slide-up');
           } else {
             card.style.display = 'none';
           }
