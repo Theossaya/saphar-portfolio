@@ -55,16 +55,36 @@
   </style>
 </head>
 <body>
-  <nav class="p-4 bg-white shadow-md flex justify-between items-center">
-    <h1 class="text-2xl text-indigo-600">Saphar</h1>
-    <div class="space-x-4">
-      <a href="index.html#home" class="hover:text-indigo-600">Home</a>
+
+  <nav class="p-4 bg-white shadow-md flex justify-between items-center relative z-50">
+  <h1 class="text-2xl text-indigo-600">Saphar</h1>
+
+  <!-- Desktop menu -->
+  <div class="space-x-4 hidden md:flex">
+ <a href="index.html#home" class="hover:text-indigo-600">Home</a>
       <a href="index.html#services" class="hover:text-indigo-600">Services</a>
       <a href="portfolio.html" class="hover:text-indigo-600">Portfolio</a>
       <a href="index.html#about" class="hover:text-indigo-600">About</a>
       <a href="index.html#contact" class="hover:text-indigo-600">Contact</a>
-    </div>
-  </nav>
+  </div>
+
+  <!-- Hamburger Button -->
+  <button id="menu-btn" class="md:hidden text-indigo-600 focus:outline-none">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="absolute top-full left-0 w-full bg-white shadow-md p-4 flex-col space-y-2 hidden md:hidden">
+    <a href="#services" class="block hover:text-indigo-600">Services</a>
+    <a href="#about" class="block hover:text-indigo-600">About</a>
+    <a href="#contact" class="block hover:text-indigo-600">Contact</a>
+    <a href="portfolio.html" class="block hover:text-indigo-600">Portfolio</a>
+  </div>
+</nav>
 
   <header class="relative text-center py-16">
     <div class="inline-block bg-yellow-300 px-2 py-1 rounded-sm rotate-2 shadow-md">
